@@ -10,12 +10,15 @@ import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-@Data
-@AllArgsConstructor
+
+//@AllArgsConstructor
 @NoArgsConstructor
-
+@Getter
+@Setter
 @Entity
 @Table(name = "productos")
 public class Producto {
@@ -32,6 +35,28 @@ public class Producto {
 	
 	@ManyToOne
 	private Usuario usuario;
+
+
+	public Producto(Integer id, String nombre, String descripcion, String imagen, Double precio, Integer cantidad
+	) {
+		super();
+		this.id = id;
+		this.nombre = nombre;
+		this.descripcion = descripcion;
+		this.imagen = imagen;
+		this.precio = precio;
+		this.cantidad = cantidad;
+	
+	}
+
+
+	@Override
+	public String toString() {
+		return "Producto [id=" + id + ", nombre=" + nombre + ", descripcion=" + descripcion + ", imagen=" + imagen
+				+ ", precio=" + precio + ", cantidad=" + cantidad + "]";
+	}
+
+
 	
 	//*******************************************************
 	
