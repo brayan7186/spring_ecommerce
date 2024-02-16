@@ -22,13 +22,14 @@ public class UploadFileService {
 		 byte [] bytes=file.getBytes();
 		 Path path =Paths.get(folder+file.getOriginalFilename());
 		 Files.write(path, bytes);
+		 return  file.getOriginalFilename();
 	 }
 	 
 	 return "default.jpg";
  }
 	
  
- public void deleteImages(String nombre) {
+ public void deleteImage(String nombre) {
 	 String ruta="images//";
 	 File file =new File(ruta+nombre);
 	 file.delete();
