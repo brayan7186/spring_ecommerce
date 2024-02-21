@@ -12,10 +12,11 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.NonNull;
 import lombok.Setter;
 
 
-//@AllArgsConstructor
+@AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
@@ -34,20 +35,10 @@ public class Producto {
 
 	
 	@ManyToOne
-	private Usuario usuario;
+	@NonNull private Usuario usuario;
 
 
-	public Producto(Integer id, String nombre, String descripcion, String imagen, Double precio, Integer cantidad
-	) {
-		super();
-		this.id = id;
-		this.nombre = nombre;
-		this.descripcion = descripcion;
-		this.imagen = imagen;
-		this.precio = precio;
-		this.cantidad = cantidad;
 	
-	}
 
 
 	@Override

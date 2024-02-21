@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
+
 import com.curso.ecommerce.model.Producto;
 import com.curso.ecommerce.model.Usuario;
 import com.curso.ecommerce.service.ProductoService;
@@ -48,7 +49,7 @@ public class ProductoController {
 		LOGGER.info("Este es el  objeto producto {}", producto);
 		Usuario u = new Usuario(1, "", "", "", "", "", "", "");
 		producto.setUsuario(u);
-
+		
 		// imagen
 		if (producto.getId() == null) {// esta balidacion es cuando se crea un producto
 			String nombreImagen = upload.saveImages(file);
