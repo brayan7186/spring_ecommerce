@@ -24,7 +24,7 @@ public class DetalleOrden {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	private String nombre;
-	private Double cantidad;
+	private Integer cantidad;
 	private  Double precio;
 	private Double total;
 	
